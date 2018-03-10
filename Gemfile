@@ -47,7 +47,7 @@ gem 'simple_form', '~> 3.1.0' #formulario limpo
 gem 'slim-rails', '~> 3.0.1' #html limpo
 #gem 'less', '~> 2.6.0'
 gem 'devise', '~> 3.4.1' #altenticacao
-gem 'paperclip', '~> 4.2.1' #upload moeda
+gem 'paperclip', '~> 5.2.0' #upload moeda
 gem 'brazilian-rails', '~> 3.3.0' #moeda
 gem 'friendly_id', '~> 5.1.0' #url amigavel
 
