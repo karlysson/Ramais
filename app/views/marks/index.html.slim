@@ -1,0 +1,43 @@
+.row-fluid
+  .table-header MARCA
+  table#sample-table-2.table.table-striped.table-bordered.table-hover
+    thead
+      tr
+        th Nome
+        th
+    tbody
+      - @marks.each do |mark|
+        tr
+          td = mark.name
+          td.td-actions
+            .hidden-phone.visible-desktop.action-buttons
+              = link_to '', mark, :class => 'blue icon-zoom-in bigger-130'
+              = link_to '', edit_mark_path(mark), :class => 'green icon-pencil bigger-130'
+              = link_to '', mark, data: {:confirm => 'Você tem certeza?'}, :class => 'red icon-trash bigger-130', :method => :delete
+
+br
+= link_to 'Nova Marca', new_mark_path, :class => "btn btn-small btn-success"
+
+
+
+/ h1 Listing marks
+
+/ table
+/   thead
+/     tr
+/       th Name
+/       th
+/       th
+/       th
+
+/   tbody
+/     - @marks.each do |mark|
+/       tr
+/         td = mark.name
+/         td = link_to 'Show', mark
+/         td = link_to 'Edit', edit_mark_path(mark)
+/         td = link_to 'Destroy', mark, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+/ br
+
+/ = link_to 'New Mark', new_mark_path

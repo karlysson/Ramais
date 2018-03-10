@@ -1,0 +1,65 @@
+.row-fluid
+  .table-header COLABORADORES
+  table#sample-table-2.table.table-striped.table-bordered.table-hover
+    thead
+      tr
+        th.center
+        th Colaborador
+        th Ramal
+        th Email
+        th Empresa
+        th Depto
+        th
+        /! th></th
+    tbody
+      - @employees.each do |employee|
+        tr
+          td.center
+            - @sex = employee.sex
+            .red
+              - if @sex == "F"
+                = image_tag("/assets/avatars/avatar1.png", size: "25")
+            .blue
+              - if @sex == "M"
+                = image_tag("/assets/avatars/avatar5.png", size: "25")
+          td = employee.name
+          td = employee.phone
+          td = employee.email
+          td = employee.store.name
+          td = employee.departament.name
+          td.td-actions
+            .hidden-phone.visible-desktop.action-buttons
+              = link_to '', employee, :class => 'blue icon-zoom-in bigger-130'
+              = link_to '', edit_employee_path(employee), :class => 'green icon-pencil bigger-130'
+              = link_to '', employee, data: {:confirm => 'Você tem certeza?'}, :class => 'red icon-trash bigger-130', :method => :delete
+
+br
+= link_to 'Novo Colaborador', new_employee_path, :class => "btn btn-small btn-success"
+
+
+/ h1 Listing employees
+
+/ table
+/   thead
+/     tr
+/       th Store
+/       th Departament
+/       th Name
+/       th Phone
+/       th
+/       th
+/       th
+
+/   tbody
+/     - @employees.each do |employee|
+/         td = employee.store.name
+/         td = employee.departament.name
+/         td = employee.name
+/         td = employee.phone
+/         td = link_to 'Show', employee
+/         td = link_to 'Edit', edit_employee_path(employee)
+/         td = link_to 'Destroy', employee, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+/ br
+
+/ = link_to 'New Employee', new_employee_path

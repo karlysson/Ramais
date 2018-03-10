@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong Nome:
+  = @store.name
+p
+  strong Endereço:
+  = @store.address
+p
+  strong Cidade:
+  = @store.city.name
+p
+  strong Marca:
+  = @store.mark.name
+p
+  strong Telefone:
+  = @store.phone
+p
+  strong CEP:
+  = @store.zip_code
+
+= link_to 'Editar', edit_store_path(@store)
+'|
+= link_to 'Voltar', stores_path

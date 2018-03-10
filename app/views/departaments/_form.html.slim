@@ -1,0 +1,10 @@
+- if current_user.permission == 'Administrador'
+  = simple_form_for(@departament) do |f|
+    = f.error_notification
+
+    .form-inputs
+      = f.input :name
+      / = f.input :company_name
+
+    .form-actions
+      = f.button :submit

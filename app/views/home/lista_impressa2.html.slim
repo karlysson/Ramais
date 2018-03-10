@@ -1,0 +1,81 @@
+- @loja = request.query_parameters['lj']
+
+
+css:
+      | table
+      | {
+        | font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+        | width:100%;
+        | border-collapse:collapse;
+      | }
+      | table td, th
+      | {
+        | border:1px solid #2424FF;
+        | padding:3px 7px 2px 7px;
+      | }
+      | table th
+      | {
+        | font-size:1.2em;
+        | text-align:left;
+        | padding-top:5px;
+        | padding-bottom:4px;
+        | background-color:#2E82FF;
+        | color:#fff;
+      | }
+      | table tr.alt td
+      | {
+        | color:#000;
+        | background-color:#D6EDFF;
+      | }
+
+
+
+
+H3 Lista
+p ...................................
+
+
+- @departamentslsn.each do |departament|
+  h3 = departament.name
+  - @dpt = departament.id
+  - @employees.where(:departament_id => @dpt).where(:store_id => '1').each do |employee|
+    table border="1px" bordercolor="#FF0000" width="300px"
+      tr
+        td = "#{employee.name}"
+        td = "#{employee.name}"
+        td = "#{employee.name}"
+        td = "#{employee.name}"
+        td = "#{employee.name}
+
+
+table
+  tr
+    th Curso
+    th Carga Hor.
+    th Dias da Semana
+  tr
+    td Servidores Linux
+    td 50 horas
+    td Sábados
+  tr.alt
+    td Java SE
+    td 60 horas
+    td Sábados
+  tr
+    td Desenv. Android
+    td 50 horas
+    td Segundas, Quartas e Sextas.
+  tr.alt
+    td Windows Server
+    td 40 horas
+    td Domingos
+  tr
+    td Java Web
+    td 60 horas
+    td Segundas, Quartas e Sextas.
+  tr.alt
+    td C# e ASP NET
+    td 40 horas
+    td Sábados
+
+

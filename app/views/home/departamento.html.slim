@@ -1,0 +1,38 @@
+- @url = request.query_parameters
+- @loja = @url['loja']
+- @depto = @url['depto']
+
+.row-fluid
+  .table-header RAMAILS
+  table#sample-table-2.table.table-striped.table-bordered.table-hover
+    thead
+      tr
+        th.center
+        th Colaborador
+        th Marca
+        th Ramal
+        th Empresa
+        th Depto
+        th
+
+    tbody
+      - @employees.where(:store_id => "#{@loja}").where(:departament_id =>  "#{@depto}").each do |employee|
+        tr
+          td.center
+            - @sex = employee.sex
+            .red
+              - if @sex == "F"
+                = image_tag("/assets/avatars/avatar1.png", size: "25")
+            .blue
+              - if @sex == "M"
+                = image_tag("/assets/avatars/avatar5.png", size: "25")
+          td = employee.name
+          td = employee.phone
+          td = employee.store.mark.name
+          td = employee.store.name
+          td = employee.departament.name
+          td.td-actions
+            .hidden-phone.visible-desktop.action-buttons
+              = link_to '', employee, :class => 'blue icon-zoom-in bigger-130'
+              = link_to '', edit_employee_path(employee), :class => 'green icon-pencil bigger-130'
+              = link_to '', employee, data: {:confirm => 'Você tem certeza?'}, :class => 'red icon-trash bigger-130', :method => :delete

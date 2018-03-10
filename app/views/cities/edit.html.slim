@@ -1,0 +1,12 @@
+h1 Editar Cidade
+
+== render 'form'
+
+- if current_user.permission == 'Secretaria'
+  h3 Somente o T.I pode Manipular estes dados.
+  H4 ENTRE EM CONTATO COM DEPTO. T.I
+
+= link_to 'Ver', @city
+'|
+= link_to 'Voltar', cities_path
+

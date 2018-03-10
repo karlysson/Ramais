@@ -1,0 +1,43 @@
+.row-fluid
+  .table-header ESTATO
+  table#sample-table-2.table.table-striped.table-bordered.table-hover
+    thead
+      tr
+        th Nome
+        th
+    tbody
+      - @states.each do |state|
+        tr
+          td = state.name
+          td.td-actions
+            .hidden-phone.visible-desktop.action-buttons
+              = link_to '', state, :class => 'blue icon-zoom-in bigger-130'
+              = link_to '', edit_state_path(state), :class => 'green icon-pencil bigger-130'
+              = link_to '', state, data: {:confirm => 'Você tem certeza?'}, :class => 'red icon-trash bigger-130', :method => :delete
+
+br
+= link_to 'Novo Estato', new_state_path, :class => "btn btn-small btn-success"
+
+
+
+/ h1 Listing states
+
+/ table
+/   thead
+/     tr
+/       th Name
+/       th
+/       th
+/       th
+
+/   tbody
+/     - @states.each do |state|
+/       tr
+/         td = state.name
+/         td = link_to 'Show', state
+/         td = link_to 'Edit', edit_state_path(state)
+/         td = link_to 'Destroy', state, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+/ br
+
+/ = link_to 'New State', new_state_path

@@ -1,0 +1,15 @@
+- if current_user.permission == 'Administrador'
+  = simple_form_for(@user) do |f|
+    = f.error_notification
+
+    .form-inputs
+      = f.input :name
+      p Permissão:
+      = f.select(:permission,['Administrador','Secretaria'])
+      / = f.input :permission
+      = f.input :email
+      = f.input :password
+      = f.input :password_confirmation
+
+    .form-actions
+      = f.button :submit

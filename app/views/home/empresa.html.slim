@@ -1,0 +1,50 @@
+.row-fluid
+  .table-header LOJAS
+  table#sample-table-2.table.table-striped.table-bordered.table-hover
+    thead
+      tr
+        th Marca
+        th Loja
+        th Telefone
+        th Endereço
+        th Cidade
+        th Estado
+        th CeP
+    tbody
+      - @stores.each do |store|
+        tr
+          td = store.mark.name
+          td = store.name
+          td = store.phone
+          td = store.address
+          td = store.city.name
+          td = store.city.state.name
+          td = store.zip_code
+
+
+
+/ h1 Listing stores
+
+/ table
+/   thead
+/     tr
+/       th Name
+/       th Address
+/       th City
+/       th Mark
+/       th Phone
+/       th Zip code
+/       th
+/       th
+/       th
+
+/   tbody
+/     - @stores.each do |store|
+/       tr
+/         td = store.name
+/         td = store.address
+/         td = store.city.name
+/         td = store.mark.name
+/         td = store.phone
+/         td = store.zip_code
+

@@ -1,0 +1,31 @@
+.row-fluid
+  .table-header RAMAILS
+  table#sample-table-2.table.table-striped.table-bordered.table-hover
+    thead
+      tr
+        th.center
+        th Nome
+        th Ramal
+        th Marca
+        th Empresa
+        th Depto
+    tbody
+      - @employees.each do |employee|
+        tr
+          td.center
+            - @sex = employee.sex
+            .red
+              - if @sex == "F"
+                / = @sex
+                = image_tag("/assets/avatars/avatar1.png", size: "25")
+            .blue
+              - if @sex == "M"
+                / = @sex
+                = image_tag("/assets/avatars/avatar5.png", size: "25")
+          td = employee.name
+          td = employee.phone
+          td = employee.store.mark.name
+          td = employee.store.name
+          td = employee.departament.name
+
+

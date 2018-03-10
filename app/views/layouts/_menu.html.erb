@@ -1,0 +1,58 @@
+<ul class="nav nav-list">
+          <li class="active">
+            <a href="/empresa">
+              <i class="icon-home"></i>
+              <span class="menu-text"> EMPRESAS </span>
+            </a>
+          </li>
+          <% @marks.order("name").each do |mark| %>
+          <li>
+            <a href="#" class="dropdown-toggle">
+              <i class="icon-desktop"></i>
+              <span class="menu-text">
+                  <%= mark.name %>
+                  <% @mark_id = mark.id %>
+              </span>
+              <b class="arrow icon-angle-down"></b>
+            </a>
+            <ul class="submenu">
+            <% @stores.where(:mark => @mark_id).order("name").each do |store| %>
+                  <li>
+                    <a href="/ramal_loja?id=<%= store.id %>" class="dropdown-toggle">
+                      <i class="icon-double-angle-right"></i>
+                      <%= store.name %>
+                      <% @store_id = store.id %>
+                      <!-- <b class="arrow icon-angle-down"></b> -->
+                    </a>
+                  </li>
+            <% end %>
+            </ul>
+          </li>
+          <% end %>
+
+          <% if user_signed_in? %>
+            <li>
+            <a href="#" class="dropdown-toggle">
+              <i class="icon-desktop"></i>
+              <span class="menu-text"> Admin </span>
+              <b class="arrow icon-angle-down"></b>
+            </a>
+            <ul class="submenu">
+              <li>
+                <%= link_to 'Funcionários', '/employees'%>
+                <%- if current_user.permission == 'Administrador' %>
+                  <%= link_to 'Departamento', '/departaments' %>
+                  <%= link_to 'Loja', '/stores' %>
+                  <%= link_to 'Marca', '/marks' %>
+                  <%= link_to 'Cidade', '/cities' %>
+                  <%= link_to 'Estato', '/states' %>
+                  <%= link_to 'User', '/users' %>
+                <% end %>
+              </li>
+            </ul>
+          </li>
+          <% end %>
+
+        </ul>
+
+

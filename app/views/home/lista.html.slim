@@ -1,0 +1,11 @@
+H3 Lista de impressão por loja:
+
+- @stores.order("name").each do |store|
+  a href="/lista_impressa?lj=#{store.id}" target='blank'
+    i.icon-print.bigger-160
+    / = " #{store.mark.name} - #{store.name}"
+    = " #{store.name}"
+  br
+
+
+

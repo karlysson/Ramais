@@ -1,0 +1,31 @@
+- @loja = request.query_parameters['lj']
+- @stores.where(:id => @loja).each do |store|
+   - @lojaMaca = store.mark.name
+   - @lojaName = store.name
+.container
+  h3.header.smaller.lighter.green
+    - for i in 0..0
+      = "RAMAIS - #{@lojaMaca.upcase} - #{@lojaName.upcase}"
+    end
+  br
+
+.container
+  .row
+    ul.thumbnails
+      - @employeesDept.where(:store => @loja).order("name").each do |employee|
+       li.span4
+          table border="1" style=("border: 0px solid #003bb3; color: #000; width: 100%")
+            tr style=("background-color: #000;  color: white;")
+              th.center colspan="2"
+                - @dpt = employee.departament.id
+                = employee.departament.name
+
+            tr.center style=("background-color: #003bb3;  color: white;")
+              th Nome
+              th Ramal
+            - @employees.where(:departament_id => @dpt).where(:store_id => @loja).order("name").each do |employee|
+              tr
+                th = " #{employee.name} "
+                td = " #{employee.phone} "
+
+

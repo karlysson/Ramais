@@ -1,0 +1,15 @@
+= simple_form_for(@employee) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :store
+    = f.association :departament
+    p Sexo:
+    = f.select(:sex,['M','F'])
+    / = f.input :sex
+    = f.input :name
+    = f.input :email
+    = f.input :phone
+
+  .form-actions
+    = f.button :submit

@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Nome:
+  = @user.name
+p
+  strong Permissão:
+  = @user.permission
+p
+  strong E-mail:
+  = @user.email
+p
+  strong Password:
+  = @user.password
+p
+  strong Password confirmation:
+  = @user.password_confirmation
+
+= link_to 'Editar', edit_user_path(@user)
+'|
+= link_to 'Voltar', users_path

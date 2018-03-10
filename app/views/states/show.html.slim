@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @state.name
+
+= link_to 'Editar', edit_state_path(@state)
+'|
+= link_to 'Voltar', states_path

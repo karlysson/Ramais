@@ -1,0 +1,28 @@
+- @id = request.query_parameters['id']
+.row-fluid
+  .table-header
+    - @employeeslj.where(:store_id => @id).each do |employee|
+        = "#{employee.store.mark.name.upcase} - #{employee.store.name.upcase}"
+  table#sample-table-2.table.table-striped.table-bordered.table-hover
+    thead
+      tr
+        th.center
+        th Nome
+        th Ramal
+        / th Empresa
+        th Depto
+    tbody
+      - @employees.where(:store_id => @id).each do |employee|
+        tr
+          td.center
+            - @sex = employee.sex
+            .red
+              - if @sex == "F"
+                = image_tag("/assets/avatars/avatar1.png", size: "25")
+            .blue
+              - if @sex == "M"
+                = image_tag("/assets/avatars/avatar5.png", size: "25")
+          td = employee.name
+          td = employee.phone
+          / td = employee.store.name
+          td = employee.departament.name

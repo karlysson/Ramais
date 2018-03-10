@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Phonebook</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+</head>
+<body>
+
+
+  <%= link_to 'Funcionario', '/employees' %>
+  <%= link_to 'Departamento', '/departaments' %>
+  <%= link_to 'Loja', '/stores' %>
+  <%= link_to 'Cidade', '/cities' %>
+  <%= link_to 'Estato', '/states' %>
+
+<%= yield %>
+
+</body>
+</html>

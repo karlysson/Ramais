@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Grupo Jorlan</title>
+    
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag 'car.ico' %>
+    <%= render 'layouts/head' %>
+
+    <style type="text/css" media="screen">
+        a.men:link {color:#FFF;text-decoration:none;}
+        a.men:visited {color:#FFF; }
+        a.men:hover {color:#FFF; }
+        a.men:active { color:#FFF;}
+    </style>
+
+   </head>
+  <body>
+
+    <div class="navbar"><%= render 'layouts/menu_top' %></div>
+
+
+
+    <div class="main-container container-fluid">
+      <a class="menu-toggler" id="menu-toggler" href="#">
+        <span class="menu-text"></span>
+      </a>
+
+      <div class="sidebar" >
+        <div class="sidebar-shortcuts">
+          <div class="sidebar-shortcuts-large" >
+
+              <%= link_to 'Ramails', "/", :class => 'men btn btn-small btn-success' %>
+            
+              <%= link_to 'Loja', "/empresa", :class => 'men btn btn-small btn-warning' %>
+
+              <%= link_to 'Listar', "/lista", :class => 'men btn btn-small btn-danger' %>
+     
+          </div>
+
+          <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+            <span class="btn btn-success"></span>
+
+            <span class="btn btn-info"></span>
+
+            <span class="btn btn-warning"></span>
+
+            <span class="btn btn-danger"></span>
+          </div>
+        </div>
+
+
+<!--MENU-->
+<%= render 'layouts/menu' %>
+
+
+        <div class="sidebar-collapse" id="sidebar-collapse">
+          <i class="icon-double-angle-left"></i>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+          <ul class="breadcrumb">
+            <li>
+              <i class="icon-home home-icon"></i>
+              <a href="/">Home</a>
+
+              <span class="divider">
+                <i class="icon-angle-right arrow-icon"></i>
+              </span>
+            </li>
+            <li class="active"><a href="http://intranet.gyn.navesa.com.br">Intranet</a></li>
+          </ul><!--.breadcrumb-->
+
+          <div class="nav-search" id="nav-search">
+             <% @Ligar = (ActiveRecord::Base.connection.execute("SELECT * FROM employees").count) %>
+             <%= @Ligar %> Ramails
+          </div><!--#nav-search-->
+        </div>
+
+        <div class="page-content">
+          <div class="page-header position-relative">
+            <h1>
+              Bem-vindo!
+              <small>
+                <i class="icon-double-angle-right"></i>
+                Nova Lista Telefônica - Grupo Jorlan
+                <!-- T.I Grupo Navesa - Ciaasa &amp; 2015 -->
+              </small>
+            </h1>
+          </div><!--/.page-header-->
+
+        <%= yield %>
+
+        </div><!--/.page-content-->
+
+      </div><!--/.main-content-->
+    </div><!--/.main-container-->
+
+    <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-small btn-inverse">
+      <i class="icon-double-angle-up icon-only bigger-110"></i>
+    </a>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= render 'layouts/script' %>
+  </body>
+</html>

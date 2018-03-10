@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Loja:
+  = @employee.store.name
+p
+  strong Departamento:
+  = @employee.departament.name
+p
+  strong Nome:
+  = @employee.name
+p
+  strong Email:
+  = @employee.email
+p
+  strong Tel/Ramail:
+  = @employee.phone
+
+= link_to 'Editar', edit_employee_path(@employee)
+'|
+= link_to 'Voltar', employees_path

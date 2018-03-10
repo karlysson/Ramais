@@ -1,0 +1,46 @@
+.row-fluid
+  .table-header DEPARTAMENTO
+  table#sample-table-2.table.table-striped.table-bordered.table-hover
+    thead
+      tr
+        th Nome
+        / th Empresa
+        th
+    tbody
+      - @departaments.each do |departament|
+        tr
+          td = departament.name
+          / td = departament.company_name
+          td.td-actions
+            .hidden-phone.visible-desktop.action-buttons
+              = link_to '', departament, :class => 'blue icon-zoom-in bigger-130'
+              = link_to '', edit_departament_path(departament), :class => 'green icon-pencil bigger-130'
+              = link_to '', departament, data: {:confirm => 'Você tem certeza?'}, :class => 'red icon-trash bigger-130', :method => :delete
+
+br
+= link_to 'Novo Depto', new_departament_path, :class => "btn btn-small btn-success"
+
+
+/ h1 Listing departaments
+
+/ table
+/   thead
+/     tr
+/       th Name
+/       th Company name
+/       th
+/       th
+/       th
+
+/   tbody
+/     - @departaments.each do |departament|
+/       tr
+/         td = departament.name
+/         td = departament.company_name
+/         td = link_to 'Show', departament
+/         td = link_to 'Edit', edit_departament_path(departament)
+/         td = link_to 'Destroy', departament, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+/ br
+
+/ = link_to 'New Departament', new_departament_path

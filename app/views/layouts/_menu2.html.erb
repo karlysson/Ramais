@@ -1,0 +1,163 @@
+<ul class="nav nav-list">
+
+          <li class="active">
+            <a href="index.html">
+              <i class="icon-home"></i>
+              <span class="menu-text"> EMPRESAS </span>
+            </a>
+          </li>
+
+
+          <% @marks.each do |mark| %>
+          <li>
+            <a href="#" class="dropdown-toggle">
+              <i class="icon-desktop"></i>
+              <span class="menu-text"> <%= mark.name %> </span>
+              <b class="arrow icon-angle-down"></b>
+            </a>
+
+            <ul class="submenu">
+
+<% @cities.each do |city| %>
+              <li>
+                <a href="#" class="dropdown-toggle">
+                  <i class="icon-double-angle-right"></i>
+                  <%= city.name %>
+                  <b class="arrow icon-angle-down"></b>
+                </a>
+
+                <ul class="submenu">
+                <% @departaments.each do |departament| %>
+                  <li>
+                    <a href="#">
+                      <i class="icon-leaf"></i>
+                      T.I
+                    </a>
+                  </li>
+                  <% end %>
+                </ul>
+
+              </li>
+          <% end %>
+
+
+            </ul>
+          </li>
+          <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <!--li>
+            <a href="#" class="dropdown-toggle">
+              <i class="icon-desktop"></i>
+              <span class="menu-text"> UI Elements </span>
+
+              <b class="arrow icon-angle-down"></b>
+            </a>
+
+            <ul class="submenu">
+              <li>
+                <a href="elements.html">
+                  <i class="icon-double-angle-right"></i>
+                  Elements
+                </a>
+              </li>
+
+              <li>
+                <a href="buttons.html">
+                  <i class="icon-double-angle-right"></i>
+                  Buttons &amp; Icons
+                </a>
+              </li>
+
+              <li>
+                <a href="treeview.html">
+                  <i class="icon-double-angle-right"></i>
+                  Treeview
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="dropdown-toggle">
+                  <i class="icon-double-angle-right"></i>
+
+                  Three Level Menu
+                  <b class="arrow icon-angle-down"></b>
+                </a>
+
+                <ul class="submenu">
+                  <li>
+                    <a href="#">
+                      <i class="icon-leaf"></i>
+                      Item #1
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#" class="dropdown-toggle">
+                      <i class="icon-pencil"></i>
+
+                      4th level
+                      <b class="arrow icon-angle-down"></b>
+                    </a>
+
+                    <ul class="submenu">
+                      <li>
+                        <a href="#">
+                          <i class="icon-plus"></i>
+                          Add Product
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="#">
+                          <i class="icon-eye-open"></i>
+                          View Products
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li-->
+
+
+
+
+          <!-- Admin -->
+            <li>
+            <a href="#" class="dropdown-toggle">
+              <i class="icon-desktop"></i>
+              <span class="menu-text"> Admin </span>
+              <b class="arrow icon-angle-down"></b>
+            </a>
+            <ul class="submenu">
+              <li>
+                <%= link_to 'Funcionários', '/employees'%>
+                <%= link_to 'Departamento', '/departaments' %>
+                <%= link_to 'Loja', '/stores' %>
+                <%= link_to 'Marca', '/marks' %>
+                <%= link_to 'Cidade', '/cities' %>
+                <%= link_to 'Estato', '/states' %>
+                <!--a href="elements.html">
+                  <i class="icon-double-angle-right"></i>
+                  Elements
+                </a-->
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+
+

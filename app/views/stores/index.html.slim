@@ -1,0 +1,63 @@
+.row-fluid
+  .table-header EMPRESA
+  table#sample-table-2.table.table-striped.table-bordered.table-hover
+    thead
+      tr
+        th Marca
+        th Nome
+        th Telefone
+        th Endereço
+        th Cidade
+        th CEP
+        th
+    tbody
+      - @stores.each do |store|
+        tr
+          td = store.mark.name
+          td = store.name
+          td = store.phone
+          td = store.address
+          td = store.city.name
+          td = store.zip_code
+          td.td-actions
+            .hidden-phone.visible-desktop.action-buttons
+              = link_to '', store, :class => 'blue icon-zoom-in bigger-130'
+              = link_to '', edit_store_path(store), :class => 'green icon-pencil bigger-130'
+              = link_to '', store, data: {:confirm => 'Você tem certeza?'}, :class => 'red icon-trash bigger-130', :method => :delete
+
+br
+= link_to 'Nova Empresa', new_store_path, :class => "btn btn-small btn-success"
+
+
+
+/ h1 Listing stores
+
+/ table
+/   thead
+/     tr
+/       th Name
+/       th Address
+/       th City
+/       th Mark
+/       th Phone
+/       th Zip code
+/       th
+/       th
+/       th
+
+/   tbody
+/     - @stores.each do |store|
+/       tr
+/         td = store.name
+/         td = store.address
+/         td = store.city.name
+/         td = store.mark.name
+/         td = store.phone
+/         td = store.zip_code
+/         td = link_to 'Show', store
+/         td = link_to 'Edit', edit_store_path(store)
+/         td = link_to 'Destroy', store, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+/ br
+
+/ = link_to 'New Store', new_store_path

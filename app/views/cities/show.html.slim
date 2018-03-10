@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Estato:
+  = @city.state.name
+p
+  strong Nome:
+  = @city.name
+
+= link_to 'Edit', edit_city_path(@city)
+'|
+= link_to 'Voltar', cities_path

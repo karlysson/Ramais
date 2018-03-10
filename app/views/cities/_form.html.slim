@@ -1,0 +1,10 @@
+- if current_user.permission == 'Administrador'
+  = simple_form_for(@city) do |f|
+    = f.error_notification
+
+    .form-inputs
+      = f.association :state
+      = f.input :name
+
+    .form-actions
+      = f.button :submit

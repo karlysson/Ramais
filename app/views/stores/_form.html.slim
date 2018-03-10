@@ -1,0 +1,14 @@
+- if current_user.permission == 'Administrador'
+  = simple_form_for(@store) do |f|
+    = f.error_notification
+
+    .form-inputs
+      = f.input :name
+      = f.input :address
+      = f.association :city
+      = f.association :mark
+      = f.input :phone
+      = f.input :zip_code
+
+    .form-actions
+      = f.button :submit

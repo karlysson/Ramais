@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Nome:
+  = @departament.name
+/ p
+/   strong Company name:
+/   = @departament.company_name
+
+= link_to 'Editar', edit_departament_path(@departament)
+'|
+= link_to 'Voltar', departaments_path

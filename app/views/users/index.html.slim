@@ -1,0 +1,58 @@
+.row-fluid
+  .table-header DEPARTAMENTO
+  table#sample-table-2.table.table-striped.table-bordered.table-hover
+    thead
+      tr
+        th Nome
+        th Permissão
+        th E-mail
+        / th Password
+        / th Password confirmation
+        th
+    tbody
+      - @users.each do |user|
+        tr
+          td = user.name
+          td = user.permission
+          td = user.email
+          / td = user.password
+          / td = user.password_confirmation
+          td.td-actions
+            .hidden-phone.visible-desktop.action-buttons
+              = link_to '', user, :class => 'blue icon-zoom-in bigger-130'
+              = link_to '', edit_user_path(user), :class => 'green icon-pencil bigger-130'
+              = link_to '', user, data: {:confirm => 'Você tem certeza?'}, :class => 'red icon-trash bigger-130', :method => :delete
+
+br
+= link_to 'Novo Usuário', new_user_path, :class => "btn btn-small btn-success"
+
+
+/ h1 Listing users
+
+/ table
+/   thead
+/     tr
+/       th Name
+/       th Permission
+/       th Email
+/       th Password
+/       th Password confirmation
+/       th
+/       th
+/       th
+
+/   tbody
+/     - @users.each do |user|
+/       tr
+/         td = user.name
+/         td = user.permission
+/         td = user.email
+/         td = user.password
+/         td = user.password_confirmation
+/         td = link_to 'Show', user
+/         td = link_to 'Edit', edit_user_path(user)
+/         td = link_to 'Destroy', user, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+/ br
+
+/ = link_to 'New User', new_user_path

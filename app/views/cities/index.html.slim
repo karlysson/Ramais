@@ -1,0 +1,46 @@
+.row-fluid
+  .table-header CIDADE
+  table#sample-table-2.table.table-striped.table-bordered.table-hover
+    thead
+      tr
+        th Estado
+        th Nome
+        th
+    tbody
+      - @cities.each do |city|
+        tr
+          td = city.state.name
+          td = city.name
+          td.td-actions
+            .hidden-phone.visible-desktop.action-buttons
+              = link_to '', city, :class => 'blue icon-zoom-in bigger-130'
+              - if current_user.permission == 'Administrador'
+                = link_to '', edit_city_path(city), :class => 'green icon-pencil bigger-130'
+                = link_to '', city, data: {:confirm => 'Você tem certeza?'}, :class => 'red icon-trash bigger-130', :method => :delete
+
+= link_to 'Nova Cidade', new_city_path, :class => "btn btn-small btn-success"
+
+
+/ h1 Listing cities
+
+/ table
+/   thead
+/     tr
+/       th State
+/       th Name
+/       th
+/       th
+/       th
+
+/   tbody
+/     - @cities.each do |city|
+/       tr
+/         td = city.state.name
+/         td = city.name
+/         td = link_to 'Show', city
+/         td = link_to 'Edit', edit_city_path(city)
+/         td = link_to 'Destroy', city, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+/ br
+
+/ = link_to 'New City', new_city_path
