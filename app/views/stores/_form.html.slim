@@ -5,8 +5,8 @@
     .form-inputs
       = f.input :name
       = f.input :address
-      = f.association :city
-      = f.association :mark
+      = f.association :city, collection: City.order(:name)
+      = f.association :mark, collection: Mark.order(:name)
       = f.input :phone
       = f.input :zip_code
 

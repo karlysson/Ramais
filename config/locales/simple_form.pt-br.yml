@@ -1,7 +1,29 @@
 pt-BR:
+  helpers:
+    submit:
+      employee:
+        create: "Criar Colaborador"
+        update: "Atualizar Colaborador"
+      departament:
+        create: "Criar Departamento"
+        update: "Atualizar Departamento"
+      state:
+        create: "Criar Estado"
+        update: "Atualizar Estado"
+      city:
+        create: "Criar Cidade"
+        update: "Atualizar Cidade"
+      mark:
+        create: "Criar Marca"
+        update: "Atualizar Marca"
+      store:
+        create: "Criar Empresa"
+        update: "Atualizar Empresa"
+
   simple_form:
     yes: Sim
     no: Não
+
     required:
       text: obrigatório
       mark: "*"
@@ -21,7 +43,8 @@ pt-BR:
       employee:
         store: Loja
         departament: Departamento
-        phone: Telefone
+        phone: Ramal
+        email: E-mail
       store:
         address: Endereço
         city: Cidade

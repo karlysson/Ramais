@@ -2,8 +2,8 @@
   = f.error_notification
 
   .form-inputs
-    = f.association :store
-    = f.association :departament
+    = f.association :store, collection: Store.order(:name)
+    = f.association :departament, collection: Departament.order(:name)
     p Sexo:
     = f.select(:sex,['M','F'])
     / = f.input :sex

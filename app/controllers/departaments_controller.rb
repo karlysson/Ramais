@@ -11,7 +11,7 @@ class DepartamentsController < ApplicationController
     @states = State.all
     @marks = Mark.all
     @employees = Employee.all
-    @departaments = Departament.all
+    @departaments = Departament.all.order(:name)
     @cities = City.all
   end
 

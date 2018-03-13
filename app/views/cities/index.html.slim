@@ -3,14 +3,14 @@
   table#sample-table-2.table.table-striped.table-bordered.table-hover
     thead
       tr
-        th Estado
         th Nome
+        th Estado
         th
     tbody
       - @cities.each do |city|
         tr
-          td = city.state.name
           td = city.name
+          td = city.state.name
           td.td-actions
             .hidden-phone.visible-desktop.action-buttons
               = link_to '', city, :class => 'blue icon-zoom-in bigger-130'

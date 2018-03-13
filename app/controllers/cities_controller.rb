@@ -32,7 +32,7 @@ class CitiesController < ApplicationController
     @city = City.new
     @users = User.all
     @stores = Store.all
-    @states = State.all
+    @states = State.all.order(:name)
     @marks = Mark.all
     @employees = Employee.all
     @departaments = Departament.all

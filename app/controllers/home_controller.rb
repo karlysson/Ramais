@@ -5,7 +5,7 @@ class HomeController < ApplicationController
     @stores = Store.all
     @states = State.all
     @marks = Mark.all
-    @employees = Employee.all
+    @employees = Employee.all.order(:name)
     @departaments = Departament.all
     @cities = City.all
   end

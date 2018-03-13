@@ -6,8 +6,7 @@ class StoresController < ApplicationController
   # GET /stores
   # GET /stores.json
   def index
-    @stores = Store.all
-
+    @stores = Store.all.order(:name)
     @employees = Employee.all
     @marks = Mark.all
     @cities = City.all
@@ -27,7 +26,6 @@ class StoresController < ApplicationController
   # GET /stores/new
   def new
     @store = Store.new
-
     @stores = Store.all
     @employees = Employee.all
     @marks = Mark.all
