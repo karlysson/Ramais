@@ -1,13 +1,23 @@
 class StatesController < ApplicationController
   before_action :set_state, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_all
   before_action :authenticate_user!
+
+  def set_all
+    @states = State.all
+    @employees = Employee.all
+    @marks = Mark.all
+    @stores = Store.all
+    @cities = City.all
+    @departaments = Departament.all
+  end
+
+
 
   # GET /states
   # GET /states.json
   def index
     @states = State.all
-
     @employees = Employee.all
     @marks = Mark.all
     @stores = Store.all

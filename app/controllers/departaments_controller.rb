@@ -1,7 +1,17 @@
 class DepartamentsController < ApplicationController
   before_action :set_departament, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_all
   before_action :authenticate_user!
+
+  def set_all
+    @users = User.all
+    @stores = Store.all
+    @states = State.all
+    @marks = Mark.all
+    @employees = Employee.all
+    @departaments = Departament.all.order(:name)
+    @cities = City.all
+  end
 
   # GET /departaments
   # GET /departaments.json

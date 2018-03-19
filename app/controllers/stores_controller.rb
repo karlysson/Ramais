@@ -1,12 +1,20 @@
 class StoresController < ApplicationController
   before_action :set_store, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_all
   before_action :authenticate_user!
+
+  def set_all
+    @stores = Store.all
+    @employees = Employee.all
+    @marks = Mark.all
+    @cities = City.all
+    @departaments = Departament.all
+  end
 
   # GET /stores
   # GET /stores.json
   def index
-    @stores = Store.all.order(:name)
+    @stores = Store.all
     @employees = Employee.all
     @marks = Mark.all
     @cities = City.all

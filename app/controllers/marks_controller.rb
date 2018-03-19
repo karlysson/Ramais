@@ -1,13 +1,19 @@
 class MarksController < ApplicationController
   before_action :set_mark, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_all
   before_action :authenticate_user!
 
+  def set_all
+    @marks = Mark.all
+    @employees = Employee.all
+    @stores = Store.all
+    @cities = City.all
+    @departaments = Departament.all
+  end
   # GET /marks
   # GET /marks.json
   def index
     @marks = Mark.all
-
     @employees = Employee.all
     @stores = Store.all
     @cities = City.all
